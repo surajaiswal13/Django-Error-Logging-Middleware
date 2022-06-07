@@ -35,4 +35,19 @@ python manage.py runserver
 eg: Try removing some leeter from views.py home view
 ```
 
+8. List of Api's CRUD and Search
+```
+GET - http://127.0.0.1:8000/error-logs/
+POST - http://127.0.0.1:8000/error-logs/
+GET Single - http://127.0.0.1:8000/error-logs/{id}
+PATCH - http://127.0.0.1:8000/error-logs/{id}/
+DELETE - http://127.0.0.1:8000/error-logs/{id}/
+SEARCH - http://127.0.0.1:8000/error-logs/?search={text-to-search}
+
+NOTE: {id} should be replaced by appropriate id eg: 1
+      {text-to-search} should be replaces by appropriate text eg: field-name
+```
+
+9. A Postman collection has been provided with the name "Django Error Log Middleware.postman_collection.json"
+
 Hope you all Liked the solution, Thanks
