@@ -2,20 +2,14 @@ from rest_framework import viewsets
 from .models import errorLog
 from .serializers import ErrorLogSerializer
 from rest_framework.response import Response
+from rest_framework.filters import SearchFilter
 
-class ErrorLogViewSet(viewsets.ViewSet):
+class ErrorLogViewSet(viewsets.ModelViewSet):
 
     """
-    ViewSet for ErrorLogs
+    ModelViewSet for ErrorLogs
     """
-
-    def list(self, request):
-        queryset = errorLog.objects.all()
-        serializer = ErrorLogSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def retrieve(self, request, pk=None):
-        queryset = errorLog.objects.all()
-        user = get_object_or_404(queryset, pk=pk)
-        serializer = ErrorLogSerializer(user)
-        return Response(serializer.data)
+    queryset = errorLog.objects.all()
+    serializer_class = ErrorLogSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['exception', 'path']

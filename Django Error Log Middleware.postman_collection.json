@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "814d91d2-c7d9-4de6-95f8-3969c5e89c18",
+		"name": "Django Error Log Middleware",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18001822"
+	},
+	"item": [
+		{
+			"name": "List Error Log",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/error-logs/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"error-logs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Error Log",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "exception",
+							"value": "test exception",
+							"type": "text"
+						},
+						{
+							"key": "path",
+							"value": "/test_path/",
+							"type": "text"
+						},
+						{
+							"key": "error_stack",
+							"value": "Test error: testing error",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/error-logs/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"error-logs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Detail Error Log",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/error-logs/{id}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"error-logs",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Error Log",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "error_stack",
+							"value": "Testing Error Update",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/error-logs/{id}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"error-logs",
+						"{id}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Error Log",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/error-logs/{id}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"error-logs",
+						"{id}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Error Log",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/error-logs/?search=field name",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"error-logs",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "field name"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
